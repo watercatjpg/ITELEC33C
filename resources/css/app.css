@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+/* resources/css/app.css */
+
+body {
+    background: url("/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: "Figtree", sans-serif; /* Ensure this matches your font family if set elsewhere */
+}
+
+/* Optional: Adjust content area to ensure readability */
+.main-content {
+    background: rgba(
+        255,
+        255,
+        255,
+        0.8
+    ); /* Slightly translucent white background */
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
