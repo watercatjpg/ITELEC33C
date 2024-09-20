@@ -23,7 +23,6 @@
                             @auth
                                 <a href="{{ url('/dashboard') }}" class="text-gray-900 hover:text-gray-700 transition">Dashboard</a>
                             @else
-                                <a href="{{ route('login') }}" class="text-gray-900 hover:text-gray-700 transition">Login</a>
                                 <a href="{{ route('terms') }}" class="text-gray-900 hover:text-gray-700 transition">Terms</a>
                                 <a href="{{ route('contact') }}" class="text-gray-900 hover:text-gray-700 transition">Contact</a>
                                 <a href="{{ route('services') }}" class="text-gray-900 hover:text-gray-700 transition">Services</a>

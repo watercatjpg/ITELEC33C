@@ -17,7 +17,7 @@ Route::get('/about', function () {
 
 Route::get('/contact', function () {
     return view('contact');
-})->name('contact')->middleware('checkAge:19');
+})->name('contact');
 
 Route::get('/terms', function () {
     return view('terms');
