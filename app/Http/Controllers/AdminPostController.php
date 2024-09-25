@@ -13,26 +13,34 @@ class AdminPostController extends Controller
         return view('admin.posts.index', compact('posts'));
     }
 
+    
+
+
     public function create()
     {
         return view('admin.posts.create');
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
-        ]);
-    
-        Post::create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'user_id' => auth()->id(),
-        ]);
-    
-        return redirect()->route('admin.posts.index')->with('success', 'Post created successfully.');
-    }
+{
+    // Validate the incoming request data
+    $validatedData = $request->validate([
+        'title' => 'required|string|max:255',
+        'content' => 'required|string',
+    ]);
+
+    // Create a new post
+    Post::create([
+        'title' => $validatedData['title'],
+        'content' => $validatedData['content'],
+        'user_id' => auth()->id(), // Associate the post with the logged-in user
+    ]);
+
+    // Redirect back to the list of posts
+    return redirect()->route('admin.posts.index')->with('success', 'Post created successfully.');
+}
+
+
 
     public function edit(Post $post)
     {

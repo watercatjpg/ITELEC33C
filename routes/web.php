@@ -68,15 +68,17 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('/account-list/{id}', [UserController::class, 'show'])->name('account.show');
     });
 
-    // User-specific routes: Only accessible to users with 'user' role
     Route::middleware(['auth:sanctum', 'isUser'])->prefix('user')->group(function () {
+        Route::get('/posts', [UserPostController::class, 'index'])->name('user.posts.index'); // List user posts
         Route::get('/posts/create', [UserPostController::class, 'create'])->name('user.posts.create');
         Route::post('/posts', [UserPostController::class, 'store'])->name('user.posts.store');
         Route::get('/posts/{post}', [UserPostController::class, 'show'])->name('user.posts.show');
-
-     
     });
+    
+
 });
+
+
 
 // Admin routes: These are separate and require admin role
 Route::prefix('admin')->middleware('isAdmin')->group(function () {
@@ -90,3 +92,7 @@ Route::prefix('admin')->middleware('isAdmin')->group(function () {
 Route::get('/product', function () {
     return view('product');
 })->name('product')->middleware('isUser:user');
+
+Route::get('/preoder', function () {
+    return view('preoder');
+})->name('preoder')->middleware('isUser:user');

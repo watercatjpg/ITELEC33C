@@ -70,7 +70,7 @@
             <h2 class="text-xl font-semibold text-green-800">Account List</h2>
         </div>
     </div>
-    <p class="text-gray-600">View a list of all registered accounts.</p>
+    <p class="text-gray-600">View a list of all dummy accounts.</p>
     <a href="/account-list" class="mt-4 inline-block bg-green-600 text-white rounded-lg px-4 py-2">View Account List</a>
 </div>
 
@@ -87,13 +87,16 @@
         </div>
     </div>
     <p class="text-gray-600">Create a new post for your users.</p>
+    <div class="flex space-x-4">
     <a href="/admin/posts/create" class="mt-4 inline-block bg-yellow-600 text-white rounded-lg px-4 py-2">Create Post</a>
+    <a href="/admin/posts" class="mt-4 inline-block bg-yellow-600 text-white rounded-lg px-4 py-2">View Posts</a>
+    </div>
 </div>
 
 <!-- Post as User -->
-<div class="relative bg-purple-100 border-t-4 border-purple-500 p-6 rounded-lg shadow-lg overlap">
+<div class="relative bg-purple-100 border-t-4 border-purple-500 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
     <div class="flex items-center mb-4">
-        <div class="w-12 h-12 flex items-center justify-center bg-purple-200 rounded-full">
+        <div class="w-12 h-12 flex items-center justify-center bg-purple-200 rounded-full shadow-md">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-8 h-8 text-purple-600">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v4m0 0v4m0-4h4m-4 0H8m0 0v4m4-4V4m0 0v4m0 0h4m-4 0H8" />
             </svg>
@@ -102,8 +105,11 @@
             <h2 class="text-xl font-semibold text-purple-800">Post as a User</h2>
         </div>
     </div>
-    <p class="text-gray-600">Create a new post for your personal feed.</p>
-    <a href="/user/posts/create" class="mt-4 inline-block bg-purple-600 text-white rounded-lg px-4 py-2">Create Post</a>
+    <p class="text-gray-600 mb-4">Create a new post for your personal feed.</p>
+    <div class="flex space-x-4">
+        <a href="/user/posts/create" class="bg-purple-600 text-white rounded-lg px-4 py-2 transition-colors duration-200 hover:bg-purple-700">Create Post</a>
+        <a href="/user/posts" class="bg-purple-600 text-white rounded-lg px-4 py-2 transition-colors duration-200 hover:bg-purple-700">View Posts</a>
+    </div>
 </div>
 
 

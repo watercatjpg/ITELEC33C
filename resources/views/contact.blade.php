@@ -11,6 +11,7 @@
         <!-- Background Image with Overlay -->
         <img src="/bg.jpg" alt="Background" class="absolute inset-0 object-cover w-full h-full opacity-70" />
 
+
         <!-- Content -->
         <div class="relative z-10 w-full max-w-4xl mx-auto p-6 lg:p-12">
             <!-- Header -->
@@ -22,7 +23,7 @@
                             @auth
                                 <a href="{{ url('/dashboard') }}" class="text-gray-900 hover:text-gray-700 transition">Dashboard</a>
                             @else
-                                <a href="{{ route('login') }}" class="text-gray-900 hover:text-gray-700 transition">Login</a>
+                                <a href="{{ route('home') }}" class="text-gray-900 hover:text-gray-700 transition">Login</a>
                                 <a href="{{ route('terms') }}" class="text-gray-900 hover:text-gray-700 transition">Terms</a>
                                 <a href="{{ route('contact') }}" class="text-gray-900 hover:text-gray-700 transition">Contact</a>
                                 <a href="{{ route('services') }}" class="text-gray-900 hover:text-gray-700 transition">Services</a>
@@ -37,38 +38,14 @@
             </header>
 
             <!-- Main Content -->
-            <main class="bg-white rounded-lg shadow-lg p-8 max-w-md mx-auto">
-                <h1 class="text-3xl font-bold mb-6 text-gray-900">Contact Us</h1>
-                
-                <h2 class="text-2xl font-semibold mb-4 text-gray-900">Get in Touch</h2>
-                <p class="mb-4 text-gray-700">
-                    We would love to hear from you! Please fill out the form below or reach out to us using the contact information provided.
-                </p>
-
-                <form action="{{ route('contact.submit') }}" method="POST" class="space-y-4">
-                    @csrf
-                    <div>
-                        <label for="name" class="block text-gray-700">Name:</label>
-                        <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
-                    </div>
-
-                    <div>
-                        <label for="email" class="block text-gray-700">Email:</label>
-                        <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
-                    </div>
-
-                    <div>
-                        <label for="message" class="block text-gray-700">Message:</label>
-                        <textarea id="message" name="message" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" rows="4"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full bg-blue-600 text-white rounded-md p-2 hover:bg-blue-700 transition">Send Message</button>
-                </form>
+            <main class="flex flex-col items-center">
+                <div class="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto w-full">
 
                 <h2 class="text-2xl font-semibold mt-6 mb-4 text-gray-900">Contact Information</h2>
                 <p class="text-gray-700">Email: info@electiveinc.com</p>
                 <p class="text-gray-700">Phone: +1 (555) 123-4567</p>
                 <p class="text-gray-700">Address: 123 Main St, Suite 456, City, Country</p>
+                </div>
             </main>
         </div>
     </div>
