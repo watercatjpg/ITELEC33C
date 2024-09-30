@@ -12,18 +12,28 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Actions</th>
-
+                    <th class="py-3 px-6 text-left">ID</th>
+                    <th class="py-3 px-6 text-left">Title</th>
+                    <th class="py-3 px-6 text-left">Content</th>
+                    <th class="py-3 px-6 text-left">Author</th>
+                    <th class="py-3 px-6 text-left">Time Created</th> <!-- New Time Created Column -->
+                    <th class="py-3 px-6 text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($posts as $post)
                     <tr>
-                        <td>{{ $post->id }}</td>
-                        <td>{{ $post->title }}</td>
-                        <td>
+                        <td class="py-3 px-6 text-left whitespace-nowrap">{{ $post->id }}</td>
+                        <td class="py-3 px-6 text-left">{{ $post->title }}</td>
+                        <td class="py-3 px-6 text-left">{{ Str::limit($post->content, 50) }}</td>
+                        <td class="py-3 px-6 text-left">
+                            {{ $post->user->name ?? $post->user->email ?? 'Unknown' }} 
+                            ({{ $post->user->role == 'admin' ? 'Admin' : 'User' }})
+                        </td>
+                        <td class="py-3 px-6 text-left">
+                            {{ $post->created_at->format('Y-m-d H:i:s') }} <!-- Display created time -->
+                        </td>
+                        <td class="py-3 px-6 text-center">
                             <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning">Edit</a>
                         </td>
                     </tr>
@@ -31,6 +41,8 @@
             </tbody>
         </table>
 
-        {{ $posts->links() }}
+        <div class="mt-4">
+            {{ $posts->links() }} <!-- Added pagination below the table -->
+        </div>
     </div>
 </x-app-layout>

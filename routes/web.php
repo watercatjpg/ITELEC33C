@@ -97,10 +97,10 @@ Route::get('/product', function () {
 
 
 Route::post('/preorder', [PreOrderController::class, 'store'])->name('preorder.store');
-Route::get('/preoder', function () {
-    return view('preoder');
-})->name('preoder')->middleware('isUser:user');
+Route::get('/preorder', function () {
+    return view('preorder');
+})->name('preorder')->middleware('isUser:user');
 
-Route::get('/preorders', [PreOrderController::class, 'index'])->name('preorders');
+Route::get('admin/preorders', [PreOrderController::class, 'index'])->name('preorders')->middleware('isAdmin:admin');
 
 

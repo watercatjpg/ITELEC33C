@@ -23,7 +23,7 @@
 
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
 
-                    <x-nav-link href="{{ route('preoder') }}" :active="request()->routeIs('preoder')">
+                    <x-nav-link href="{{ route('preorder') }}" :active="request()->routeIs('preoder')">
                         {{ __('Pre Order') }}
                     </x-nav-link>
 

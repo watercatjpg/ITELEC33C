@@ -13,8 +13,6 @@ class AdminPostController extends Controller
 
 }
 
-    
-
 
     public function create()
     {
@@ -57,4 +55,5 @@ class AdminPostController extends Controller
         $post->update($request->all());
         return redirect()->route('admin.posts.index')->with('success', 'Post updated successfully.');
     }
+    
 }

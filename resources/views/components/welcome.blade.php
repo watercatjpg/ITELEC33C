@@ -84,14 +84,16 @@
         </div>
         <div class="ml-4">
             <h2 class="text-xl font-semibold text-yellow-800">Post as an Admin</h2>
+            <!-- Display post count -->
         </div>
-    </div>
+    </div>  
     <p class="text-gray-600">Create a new post for your users.</p>
     <div class="flex space-x-4">
-    <a href="/admin/posts/create" class="mt-4 inline-block bg-yellow-600 text-white rounded-lg px-4 py-2">Create Post</a>
-    <a href="/admin/posts" class="mt-4 inline-block bg-yellow-600 text-white rounded-lg px-4 py-2">View Posts</a>
+        <a href="/admin/posts/create" class="mt-4 inline-block bg-yellow-600 text-white rounded-lg px-4 py-2">Create Post</a>
+        <a href="/admin/posts" class="mt-4 inline-block bg-yellow-600 text-white rounded-lg px-4 py-2">View Posts</a>
     </div>
 </div>
+
 
 <!-- Post as User -->
 <div class="relative bg-purple-100 border-t-4 border-purple-500 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
