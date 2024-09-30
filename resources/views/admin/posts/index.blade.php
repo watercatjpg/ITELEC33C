@@ -1,5 +1,5 @@
 <x-app-layout>
-<div class="container">
+    <div class="container">
         <h1>Posts List</h1>
         <a href="{{ route('admin.posts.create') }}" class="btn btn-primary mb-3">Create New Post</a>
 
@@ -30,5 +30,7 @@
                 @endforeach
             </tbody>
         </table>
+
+        {{ $posts->links() }}
     </div>
 </x-app-layout>

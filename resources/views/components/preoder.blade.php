@@ -75,7 +75,9 @@
                         <button type="submit" class="w-full bg-pink-600 text-white p-2 rounded-lg hover:bg-blue-700 transition">Submit Pre-Order</button>
                     </form>
                 </section>
-            </main>  
+            </main>
+
+            
         </div>
     </div>
 </section>

@@ -26,6 +26,10 @@
                     <x-nav-link href="{{ route('preoder') }}" :active="request()->routeIs('preoder')">
                         {{ __('Pre Order') }}
                     </x-nav-link>
+
+                    <x-nav-link href="{{ route('preorders') }}" :active="request()->routeIs('preorders')">
+                        {{ __('Pre Orders') }}
+                    </x-nav-link>
                  
                     </div>
                     

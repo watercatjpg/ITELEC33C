@@ -9,5 +9,10 @@ class PreOrder extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['full_name', 'email', 'quantity'];
+    protected $fillable = ['user_id', 'full_name', 'email', 'quantity'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

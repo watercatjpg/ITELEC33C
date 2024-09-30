@@ -5,6 +5,8 @@ use App\Models\User;
 use App\Http\Controllers\UserPostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\PreOrderController;
+
 
 // Public routes
 Route::get('/', function () {
@@ -93,6 +95,12 @@ Route::get('/product', function () {
     return view('product');
 })->name('product')->middleware('isUser:user');
 
+
+Route::post('/preorder', [PreOrderController::class, 'store'])->name('preorder.store');
 Route::get('/preoder', function () {
     return view('preoder');
 })->name('preoder')->middleware('isUser:user');
+
+Route::get('/preorders', [PreOrderController::class, 'index'])->name('preorders');
+
+
